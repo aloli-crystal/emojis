@@ -158,7 +158,7 @@ module Emojis
     private def self.http_get(url : String) : String?
       uri = URI.parse(url)
       response = HTTP::Client.get(uri)
-      return nil unless response.success?
+      return unless response.success?
       response.body
     rescue
       nil
